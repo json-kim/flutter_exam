@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_exam/data/fake_data.dart';
 import 'package:instagram_exam/screen/home/components/profile_card.dart';
 
 class ProfileList extends StatelessWidget {
@@ -9,36 +10,15 @@ class ProfileList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      height: 110,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
           ProfileCard(
-            name: 'Mr. Santa',
-            profileImgUrl:
-                'https://cdn.pixabay.com/photo/2021/11/22/16/50/santa-claus-6816883_960_720.jpg',
+            account: myAccount,
           ),
-          ProfileCard(
-            name: 'Mr. Santa',
-            profileImgUrl:
-                'https://cdn.pixabay.com/photo/2021/11/22/16/50/santa-claus-6816883_960_720.jpg',
-          ),
-          ProfileCard(
-            name: 'Mr. Santa',
-            profileImgUrl:
-                'https://cdn.pixabay.com/photo/2021/11/22/16/50/santa-claus-6816883_960_720.jpg',
-          ),
-          ProfileCard(
-            name: 'Mr. Santa',
-            profileImgUrl:
-                'https://cdn.pixabay.com/photo/2021/11/22/16/50/santa-claus-6816883_960_720.jpg',
-          ),
-          ProfileCard(
-            name: 'Mr. Santa',
-            profileImgUrl:
-                'https://cdn.pixabay.com/photo/2021/11/22/16/50/santa-claus-6816883_960_720.jpg',
-          ),
+          ...accList.map((acc) => ProfileCard(account: acc)).toList()
         ],
       ),
     );

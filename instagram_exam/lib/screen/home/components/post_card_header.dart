@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_exam/data/fake_data.dart';
+import 'package:instagram_exam/model/account.dart';
 
 class PostCardHeader extends StatelessWidget {
-  final String profileImgUrl;
-  final String fullName;
-  final String nickName;
+  final String postingAccountId;
 
   const PostCardHeader({
-    this.profileImgUrl,
-    this.fullName,
-    this.nickName,
+    this.postingAccountId,
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Account account =
+        accList.firstWhere((acc) => acc.accountId == postingAccountId);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
@@ -25,15 +25,15 @@ class PostCardHeader extends StatelessWidget {
               CircleAvatar(
                 radius: 25,
                 backgroundColor: Colors.transparent,
-                backgroundImage: NetworkImage(profileImgUrl),
+                backgroundImage: NetworkImage(account.profileImgUrl),
               ),
               SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(fullName),
+                  Text(account.fullName),
                   Text(
-                    nickName,
+                    account.nickName,
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
