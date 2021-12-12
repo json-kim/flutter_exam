@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_exam/model/account.dart';
 
 import 'components/photo_slide.dart';
 
 class ShortScreen extends StatelessWidget {
-  const ShortScreen({Key key}) : super(key: key);
+  final Account account;
+
+  const ShortScreen({this.account, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class ShortScreen extends StatelessWidget {
             height: MediaQuery.of(context).padding.top * 2,
           ),
           Expanded(
-            child: PhotoSlide(),
+            child: PhotoSlide(account: account),
           ),
           SizedBox(
             height: MediaQuery.of(context).padding.top * 3,

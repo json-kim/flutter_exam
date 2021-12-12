@@ -19,7 +19,7 @@ class ProfileCard extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ShortScreen(),
+              builder: (context) => ShortScreen(account: account),
             ),
           );
         },

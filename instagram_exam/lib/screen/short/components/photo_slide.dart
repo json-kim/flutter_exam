@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_exam/data/fake_data.dart';
+import 'package:instagram_exam/model/account.dart';
 
 class PhotoSlide extends StatefulWidget {
-  const PhotoSlide({Key key}) : super(key: key);
+  final Account account;
+
+  const PhotoSlide({this.account, Key key}) : super(key: key);
 
   @override
   _PhotoSlideState createState() => _PhotoSlideState();
@@ -83,16 +86,44 @@ class _PhotoSlideState extends State<PhotoSlide>
         ),
         Positioned(
           top: 20,
+          left: 0,
           right: 0,
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.close,
-              size: 32,
-              color: Colors.white,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        widget.account.profileImgUrl,
+                      ),
+                      backgroundColor: Colors.white,
+                    ),
+                  ),
+                  Text(widget.account.fullName,
+                      style: TextStyle(color: Colors.white)),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Text(
+                    '14h',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.close,
+                  size: 32,
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
         Positioned(
