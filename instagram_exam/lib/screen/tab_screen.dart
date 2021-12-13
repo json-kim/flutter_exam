@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'account/account_screen.dart';
-import 'album/album_screen.dart';
+import 'add/add_screen.dart';
+import 'favorite/favorite_screen.dart';
 import 'home/home_screen.dart';
-import 'player/player_screen.dart';
 import 'search/search_screen.dart';
 
 class TabScreen extends StatefulWidget {
@@ -17,8 +17,8 @@ class _TabScreenState extends State<TabScreen> {
   final List<Widget> screens = [
     HomeScreen(),
     SearchScreen(),
-    PlayerScreen(),
-    AlbumScreen(),
+    AddScreen(),
+    FavoriteScreen(),
     AccountScreen(),
   ];
 
@@ -41,7 +41,7 @@ class _TabScreenState extends State<TabScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
+              Icons.home_outlined,
               color: Colors.black,
             ),
             label: 'home',
@@ -55,17 +55,17 @@ class _TabScreenState extends State<TabScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.movie_creation_outlined,
+              Icons.add_box_outlined,
               color: Colors.black,
             ),
             label: 'movie',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.shopping_bag_outlined,
+              Icons.favorite_border_outlined,
               color: Colors.black,
             ),
-            label: 'album',
+            label: 'favorite',
           ),
           BottomNavigationBarItem(
             icon: CircleAvatar(

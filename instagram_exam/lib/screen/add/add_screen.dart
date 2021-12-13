@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PlayerScreen extends StatelessWidget {
-  const PlayerScreen({Key key}) : super(key: key);
+class AddScreen extends StatelessWidget {
+  const AddScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('플레이어 스크린'),
+        title: Text('추가 스크린'),
       ),
       body: Container(),
     );
