@@ -7,6 +7,7 @@ final List<String> photoUrls = [
   'https://cdn.pixabay.com/photo/2017/07/28/00/57/bank-2547356_1280.jpg',
   'https://cdn.pixabay.com/photo/2016/11/29/13/49/christmas-baubles-1869989_960_720.jpg',
   'https://cdn.pixabay.com/photo/2019/12/11/19/38/christmas-4689129_960_720.jpg',
+  'https://cdn.pixabay.com/photo/2016/11/22/07/09/spruce-1848543_960_720.jpg',
 ];
 
 final myAccount = MyAccount(
