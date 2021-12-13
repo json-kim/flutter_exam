@@ -161,17 +161,17 @@ class AccountScreen extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                //nickname
+                // 풀네임
                 Text(
                   'Rudolph Deer',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                //description
+                //설명
                 Text(
                   'This is Rudolph\'s account.',
                   style: TextStyle(fontSize: 16),
                 ),
-                //Website Link
+                //웹 사이트 링크
                 InkWell(
                   onTap: () {},
                   child: Text(
@@ -179,14 +179,28 @@ class AccountScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.blue, fontSize: 16),
                   ),
                 ),
-                //TODO: Subject List
+                //TODO: 주제 리스트
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8),
                   child: Container(
                     height: 120,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      children: [],
+                      children: [
+                        SubjectCard(),
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 32),
+                          child: Container(
+                            width: 1,
+                            height: double.infinity,
+                            color: Colors.grey.withOpacity(0.6),
+                          ),
+                        ),
+                        SubjectCard(),
+                        SubjectCard(),
+                        SubjectCard(),
+                      ],
                     ),
                   ),
                 ),
@@ -250,6 +264,34 @@ class AccountScreen extends StatelessWidget {
             ],
           ))
         ],
+      ),
+    );
+  }
+}
+
+class SubjectCard extends StatelessWidget {
+  const SubjectCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Container(
+        width: 80,
+        height: 80,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+          border: Border.all(color: Colors.grey.withOpacity(0.8), width: 0.5),
+        ),
+        alignment: Alignment.center,
+        child: CircleAvatar(
+          radius: 36,
+          backgroundImage: NetworkImage(
+              'https://cdn.pixabay.com/photo/2020/07/22/07/04/design-5428296_1280.png'),
+        ),
       ),
     );
   }
