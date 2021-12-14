@@ -6,10 +6,10 @@ class PostCardComment extends StatelessWidget {
   final String uploadTime;
 
   const PostCardComment({
-    this.title,
-    this.content,
-    this.uploadTime,
-    Key key,
+    required this.title,
+    required this.content,
+    required this.uploadTime,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -21,16 +21,16 @@ class PostCardComment extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(content),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             uploadTime,
-            style: TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           ),
         ],
       ),

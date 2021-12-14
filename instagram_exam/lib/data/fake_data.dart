@@ -1,7 +1,7 @@
 import 'package:instagram_exam/model/account.dart';
 import 'package:instagram_exam/model/post.dart';
 
-final String myAccountId = 'myAccountId';
+const String myAccountId = 'myAccountId';
 
 final List<String> photoUrls = [
   'https://cdn.pixabay.com/photo/2017/07/28/00/57/bank-2547356_1280.jpg',

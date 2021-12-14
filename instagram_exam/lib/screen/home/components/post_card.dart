@@ -8,9 +8,9 @@ import 'package:instagram_exam/screen/home/components/post_card_photobar.dart';
 class PostCard extends StatefulWidget {
   final Post post;
 
-  PostCard({
-    this.post,
-    Key key,
+  const PostCard({
+    required this.post,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -47,8 +47,7 @@ class _PostCardState extends State<PostCard> {
           ),
           PostCardComment(
             title: widget.post.title,
-            content:
-                widget.post.contents,
+            content: widget.post.contents,
             uploadTime: widget.post.updateTime,
           ),
         ],

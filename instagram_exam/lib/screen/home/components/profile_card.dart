@@ -6,8 +6,8 @@ class ProfileCard extends StatelessWidget {
   final Account account;
 
   const ProfileCard({
-    this.account,
-    Key key,
+    required this.account,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -31,11 +31,11 @@ class ProfileCard extends StatelessWidget {
                 Container(
                   width: 70,
                   height: 70,
-                  padding: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: account is OtherAccount
-                        ? LinearGradient(
+                        ? const LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomRight,
                             colors: [
@@ -47,8 +47,8 @@ class ProfileCard extends StatelessWidget {
                         : null,
                   ),
                   child: Container(
-                    padding: EdgeInsets.all(2),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(2),
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
@@ -73,7 +73,7 @@ class ProfileCard extends StatelessWidget {
                           color: Colors.blue,
                           shape: BoxShape.circle,
                           border: Border.all(width: 3, color: Colors.white)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.add,
                         size: 25,
                         color: Colors.white,
@@ -91,7 +91,7 @@ class ProfileCard extends StatelessWidget {
                         width: 30,
                         height: 15,
                         color: Colors.pink,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'LIVE',
                             style: TextStyle(color: Colors.white, fontSize: 10),
@@ -102,7 +102,7 @@ class ProfileCard extends StatelessWidget {
                   )
               ],
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(account.fullName),
           ],
         ),

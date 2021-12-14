@@ -3,7 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:instagram_exam/data/fake_data.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key key}) : super(key: key);
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SearchScreen extends StatelessWidget {
               maxHeight: MediaQuery.of(context).size.height / 9),
           alignment: Alignment.center,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -45,7 +45,7 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Row(children: [
+                Row(children: const [
                   ThemeButton(theme: 'food'),
                   ThemeButton(theme: 'animal'),
                   ThemeButton(theme: 'trip'),
@@ -56,7 +56,7 @@ class SearchScreen extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             child: StaggeredGridView.countBuilder(
               itemCount: 30,
@@ -69,8 +69,8 @@ class SearchScreen extends StatelessWidget {
               ),
               staggeredTileBuilder: (idx) =>
                   (idx % 6 == 0 || (idx - 4) % 6 == 0)
-                      ? StaggeredTile.count(2, 2)
-                      : StaggeredTile.count(1, 1),
+                      ? const StaggeredTile.count(2, 2)
+                      : const StaggeredTile.count(1, 1),
             ),
           ),
         )
@@ -83,19 +83,19 @@ class ThemeButton extends StatelessWidget {
   final String theme;
 
   const ThemeButton({
-    this.theme,
-    Key key,
+    required this.theme,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       child: InkWell(
         onTap: () {},
         borderRadius: BorderRadius.circular(8),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               border: Border.all(color: Colors.grey.withOpacity(0.8))),

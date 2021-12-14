@@ -5,14 +5,14 @@ class PostCardPhotoBar extends StatelessWidget {
   final int currentIndex;
 
   const PostCardPhotoBar({
-    this.photoLength,
-    this.currentIndex,
-    Key key,
+    required this.photoLength,
+    required this.currentIndex,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 48,
       child: Stack(
         children: [
@@ -23,21 +23,21 @@ class PostCardPhotoBar extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.favorite_border),
+                    icon: const Icon(Icons.favorite_border),
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.chat_bubble_outline),
+                    icon: const Icon(Icons.chat_bubble_outline),
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.send_outlined),
+                    icon: const Icon(Icons.send_outlined),
                   ),
                 ],
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.bookmark_border),
+                icon: const Icon(Icons.bookmark_border),
               ),
             ],
           ),

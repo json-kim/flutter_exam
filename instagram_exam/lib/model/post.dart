@@ -8,12 +8,12 @@ class Post {
   final String updateTime;
 
   Post({
-    this.postingAccountId,
-    this.postId,
-    this.photoUrls,
-    this.tagList,
-    this.title,
-    this.contents,
-    this.updateTime,
+    required this.postingAccountId,
+    required this.postId,
+    required this.photoUrls,
+    required this.tagList,
+    required this.title,
+    required this.contents,
+    required this.updateTime,
   });
 }

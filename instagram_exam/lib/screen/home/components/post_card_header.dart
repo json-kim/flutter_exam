@@ -6,8 +6,8 @@ class PostCardHeader extends StatelessWidget {
   final String postingAccountId;
 
   const PostCardHeader({
-    this.postingAccountId,
-    Key key,
+    required this.postingAccountId,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -27,26 +27,26 @@ class PostCardHeader extends StatelessWidget {
                 backgroundColor: Colors.transparent,
                 backgroundImage: NetworkImage(account.profileImgUrl),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(account.fullName),
                   Text(
                     account.nickName,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               )
             ],
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.more_horiz),
+            icon: const Icon(Icons.more_horiz),
           ),
         ],
       ),

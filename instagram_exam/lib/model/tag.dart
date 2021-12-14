@@ -3,7 +3,7 @@ class Tag {
   final String tagName;
 
   Tag({
-    this.tagId,
-    this.tagName,
+    required this.tagId,
+    required this.tagName,
   });
 }

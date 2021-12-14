@@ -5,7 +5,10 @@ import 'package:instagram_exam/model/account.dart';
 class PhotoSlide extends StatefulWidget {
   final Account account;
 
-  const PhotoSlide({this.account, Key key}) : super(key: key);
+  const PhotoSlide({
+    required this.account,
+    Key? key,
+  }) : super(key: key);
 
   @override
   _PhotoSlideState createState() => _PhotoSlideState();
@@ -13,9 +16,9 @@ class PhotoSlide extends StatefulWidget {
 
 class _PhotoSlideState extends State<PhotoSlide>
     with SingleTickerProviderStateMixin {
-  PageController _pageController;
-  AnimationController _animationController;
-  Animation<double> _animation;
+  late PageController _pageController;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
   int _index = 0;
 
   @override
@@ -23,7 +26,7 @@ class _PhotoSlideState extends State<PhotoSlide>
     _pageController = PageController(initialPage: 0);
 
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
     _animation = Tween<double>(
       begin: 0,
       end: 1,
@@ -55,7 +58,7 @@ class _PhotoSlideState extends State<PhotoSlide>
 
   void movePage(int index) {
     _pageController.animateToPage(index,
-        curve: Curves.easeIn, duration: Duration(milliseconds: 300));
+        curve: Curves.easeIn, duration: const Duration(milliseconds: 300));
   }
 
   void onPageChanged(int index) {
@@ -103,11 +106,11 @@ class _PhotoSlideState extends State<PhotoSlide>
                     ),
                   ),
                   Text(widget.account.fullName,
-                      style: TextStyle(color: Colors.white)),
-                  SizedBox(
+                      style: const TextStyle(color: Colors.white)),
+                  const SizedBox(
                     width: 16,
                   ),
-                  Text(
+                  const Text(
                     '14h',
                     style: TextStyle(color: Colors.grey),
                   ),
@@ -117,7 +120,7 @@ class _PhotoSlideState extends State<PhotoSlide>
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.close,
                   size: 32,
                   color: Colors.white,

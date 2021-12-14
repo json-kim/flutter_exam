@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:instagram_exam/screen/login/login_screen.dart';
 
 class AccountScreen extends StatelessWidget {
-  const AccountScreen({Key key}) : super(key: key);
+  const AccountScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Rudolph',
           style: TextStyle(color: Colors.black),
         ),
@@ -19,10 +19,10 @@ class AccountScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.logout,
                 color: Colors.black,
               )),
@@ -44,8 +44,8 @@ class AccountScreen extends StatelessWidget {
                         Container(
                           width: 100,
                           height: 100,
-                          padding: EdgeInsets.all(2),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(2),
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             gradient: LinearGradient(
                               begin: Alignment.topRight,
@@ -58,12 +58,12 @@ class AccountScreen extends StatelessWidget {
                             ),
                           ),
                           child: Container(
-                            padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
+                            padding: const EdgeInsets.all(2),
+                            decoration: const BoxDecoration(
                               color: Colors.white,
                               shape: BoxShape.circle,
                             ),
-                            child: CircleAvatar(
+                            child: const CircleAvatar(
                               radius: 47,
                               backgroundColor: Colors.white,
                               backgroundImage: NetworkImage(
@@ -83,7 +83,7 @@ class AccountScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '334',
                                     style: TextStyle(
@@ -94,7 +94,7 @@ class AccountScreen extends StatelessWidget {
                                 ],
                               ),
                               Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '211K',
                                     style: TextStyle(
@@ -106,7 +106,7 @@ class AccountScreen extends StatelessWidget {
                                 ],
                               ),
                               Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '134',
                                     style: TextStyle(
@@ -126,27 +126,27 @@ class AccountScreen extends StatelessWidget {
                                 flex: 3,
                                 child: OutlinedButton(
                                     onPressed: () {},
-                                    child: Text(
+                                    child: const Text(
                                       'Message',
                                       style: TextStyle(color: Colors.black),
                                     )),
                               ),
-                              SizedBox(width: 4),
+                              const SizedBox(width: 4),
                               Expanded(
                                 flex: 1,
                                 child: OutlinedButton(
                                     onPressed: () {},
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.person_add,
                                       color: Colors.black,
                                     )),
                               ),
-                              SizedBox(width: 4),
+                              const SizedBox(width: 4),
                               Expanded(
                                 flex: 1,
                                 child: OutlinedButton(
                                     onPressed: () {},
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.arrow_drop_down,
                                       color: Colors.black,
                                     )),
@@ -158,48 +158,48 @@ class AccountScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 // 풀네임
-                Text(
+                const Text(
                   'Rudolph Deer',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 //설명
-                Text(
+                const Text(
                   'This is Rudolph\'s account.',
                   style: TextStyle(fontSize: 16),
                 ),
                 //웹 사이트 링크
                 InkWell(
                   onTap: () {},
-                  child: Text(
+                  child: const Text(
                     'https://naver.com',
                     style: TextStyle(color: Colors.blue, fontSize: 16),
                   ),
                 ),
                 //TODO: 주제 리스트
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: SizedBox(
                     height: 120,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        SubjectCard(),
+                        const SubjectCard(),
                         Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 8, vertical: 32),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 32),
                           child: Container(
                             width: 1,
                             height: double.infinity,
                             color: Colors.grey.withOpacity(0.6),
                           ),
                         ),
-                        SubjectCard(),
-                        SubjectCard(),
-                        SubjectCard(),
+                        const SubjectCard(),
+                        const SubjectCard(),
+                        const SubjectCard(),
                       ],
                     ),
                   ),
@@ -212,13 +212,15 @@ class AccountScreen extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                  child: IconButton(onPressed: () {}, icon: Icon(Icons.apps))),
+                  child: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.apps))),
               Expanded(
-                  child: IconButton(onPressed: () {}, icon: Icon(Icons.list))),
+                  child: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.list))),
               Expanded(
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.account_box_outlined))),
+                      icon: const Icon(Icons.account_box_outlined))),
             ],
           ),
           //TODO: 마이 앨범
@@ -271,7 +273,7 @@ class AccountScreen extends StatelessWidget {
 
 class SubjectCard extends StatelessWidget {
   const SubjectCard({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -287,7 +289,7 @@ class SubjectCard extends StatelessWidget {
           border: Border.all(color: Colors.grey.withOpacity(0.8), width: 0.5),
         ),
         alignment: Alignment.center,
-        child: CircleAvatar(
+        child: const CircleAvatar(
           radius: 36,
           backgroundImage: NetworkImage(
               'https://cdn.pixabay.com/photo/2020/07/22/07/04/design-5428296_1280.png'),

@@ -6,11 +6,11 @@ class Account {
   final bool isLive;
 
   Account({
-    this.accountId,
-    this.fullName,
-    this.nickName,
-    this.profileImgUrl,
-    this.isLive,
+    required this.accountId,
+    required this.fullName,
+    required this.nickName,
+    required this.profileImgUrl,
+    required this.isLive,
   });
 }
 

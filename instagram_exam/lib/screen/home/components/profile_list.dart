@@ -4,13 +4,13 @@ import 'package:instagram_exam/screen/home/components/profile_card.dart';
 
 class ProfileList extends StatelessWidget {
   const ProfileList({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,

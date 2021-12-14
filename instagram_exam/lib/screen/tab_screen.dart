@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'account/account_screen.dart';
-import 'add/add_screen.dart';
-import 'favorite/favorite_screen.dart';
 import 'home/home_screen.dart';
+import 'reels/reels_screen.dart';
 import 'search/search_screen.dart';
+import 'shop/shop_screen.dart';
 
 class TabScreen extends StatefulWidget {
-  TabScreen({Key key}) : super(key: key);
+  const TabScreen({Key? key}) : super(key: key);
 
   @override
   State<TabScreen> createState() => _TabScreenState();
@@ -15,11 +15,11 @@ class TabScreen extends StatefulWidget {
 
 class _TabScreenState extends State<TabScreen> {
   final List<Widget> screens = [
-    HomeScreen(),
-    SearchScreen(),
-    AddScreen(),
-    FavoriteScreen(),
-    AccountScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
+    const ReelsScreen(),
+    const ShopScreen(),
+    const AccountScreen(),
   ];
 
   int index = 0;
@@ -38,7 +38,7 @@ class _TabScreenState extends State<TabScreen> {
             index = idx;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
@@ -55,17 +55,17 @@ class _TabScreenState extends State<TabScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.add_box_outlined,
+              Icons.movie_outlined,
               color: Colors.black,
             ),
-            label: 'movie',
+            label: 'reels',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite_border_outlined,
+              Icons.shopping_bag_outlined,
               color: Colors.black,
             ),
-            label: 'favorite',
+            label: 'shop',
           ),
           BottomNavigationBarItem(
             icon: CircleAvatar(
